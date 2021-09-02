@@ -1,0 +1,94 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+	controllerName="bala.comEHSM_Portal.controller.indet" xmlns:html="http://www.w3.org/1999/xhtml">
+	
+
+			<Panel width="100%" headerText="Incident details" >
+		<l:Grid defaultSpan="L12 M7 S12" width="auto">
+			<l:content>
+					<l:VerticalLayout class="sapUiContentPadding" width="100%">
+						<l:dependents>
+							<core:Fragment fragmentName="bala.comEHSM_Portal.fragment.BusyDialog" type="XML"/>
+						</l:dependents>
+					</l:VerticalLayout>
+				<f:SimpleForm width="100%" id="form" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3"
+					labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+					columnsL="1" columnsM="1" singleContainerFullSize="false">
+					<f:content>
+						
+					<Label text="Record no"/>
+							<Input id="agent" value="{/Recn}"/>
+							<Label text="Incident type"/>
+							<Input id="intype" value="{/Iatype}"/>
+							<Label text="Incident description"/>
+							<Input id="indesc" value="{/Evdesc}"/>
+							<Label text="Damage type"/>
+							<Input id="dmtype" value="{/Dmtype}"/>
+							<Label text="Equipment no"/>
+							<Input id="eqno" value="{/Equnr}"/>
+							<Label text="Equipment description"/>
+							<Input id="eqdesc" value="{/Eqdesc}"/>
+							<Label text="Investigation result"/>
+							<Input id="invres" value="{/Invresult}"/>
+							<Label text="Created by"/>
+							<Input id="crby" value="{/Crnam}"/>
+							<Label text="Valid from"/>
+							<DatePicker id="valfr" valueFormat="yyyy-MM-dd" value="{/Valfr}" class="sapUiSmallMarginBottom"/>
+							<Label text="Valid to"/>
+							<DatePicker id="valto" valueFormat="yyyy-MM-dd" value="{/Valto}" class="sapUiSmallMarginBottom"/>
+						<Label/>
+					<Button width="12rem" text="Update" type="Emphasized" press="onClick"></Button>
+					
+					</f:content>
+				</f:SimpleForm>
+			</l:content>
+		</l:Grid>
+		</Panel>
+
+	<!--<Panel width="100%">
+			<l:Grid defaultSpan="L12 M7 S12" width="auto">
+				<l:content>
+					<l:VerticalLayout class="sapUiContentPadding" width="100%">
+						<l:dependents>
+							<core:Fragment fragmentName="bala.comEHSM_Portal.fragment.BusyDialog" type="XML"/>
+						</l:dependents>
+					</l:VerticalLayout>
+					<f:SimpleForm width="100%" id="form" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3"
+						labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+						columnsL="1" columnsM="1" singleContainerFullSize="false">
+						<f:content>
+							<Text text="Record no"/>
+							<Input id="agent"/>
+							<Text text="Incident type"/>
+							<Input id="intype"/>
+							<Text text="Incident description"/>
+							<Input id="indesc"/>
+							<Text text="Damage type"/>
+							<Input id="dmtype"/>
+							<Text text="Equipment no"/>
+							<Input id="eqno"/>
+								<Label/>
+					<Button width="12rem" text="Update" type="Emphasized" press="onPress"></Button>
+						</f:content>
+					</f:SimpleForm>
+					<f:SimpleForm id="form1" editable="false" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+						adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1"
+						singleContainerFullSize="false">
+						<f:content>
+							<Text text="Equipment description"/>
+							<Input id="eqdesc"/>
+							<Text text="Investigation result"/>
+							<Input id="invres"/>
+							<Text text="Created by"/>
+							<Input id="crby"/>
+							<Text text="Valid from"/>
+							<Input id="valfr"/>
+							<Text text="Valid to"/>
+							<Input id="valto"/>
+						</f:content>
+					</f:SimpleForm>
+				
+				</l:content>
+			</l:Grid>
+		</Panel>-->
+	
+</mvc:View>

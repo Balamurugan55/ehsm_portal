@@ -1,0 +1,33 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns="sap.m" controllerName="bala.comEHSM_Portal.controller.login"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App id="app">
+		<pages>
+			<Page title="EHSM Portal">
+				<content>
+					<l:VerticalLayout class="sapUiContentPadding" width="100%">
+						<l:dependents>
+							<core:Fragment fragmentName="bala.comEHSM_Portal.fragment.BusyDialog" type="XML"/>
+						</l:dependents>
+					</l:VerticalLayout><VBox fitContainer="true" justifyContent="Center" alignItems="Center" alignContent="Center">
+						<items>
+							<Text text="Login page"/>
+							<Input id="userid" placeholder="User ID"/>
+							<Input id="password" placeholder="Password" type="Password"/>
+							<Button width="12rem" text="Login" type="Emphasized" press="onClick"/>
+						</items>
+					</VBox>
+				</content>
+				<footer>
+					<Bar>
+						<contentLeft>
+							<Text text="Kaartech"/>
+						</contentLeft>
+						<contentRight>
+							<Text text="Login"/>
+						</contentRight>
+					</Bar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

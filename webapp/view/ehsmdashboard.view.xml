@@ -1,0 +1,34 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="bala.comEHSM_Portal.controller.ehsmdashboard"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App id="app">
+		<pages>
+			<Page title="EHSM portal">
+				<headerContent>
+					<Button icon="sap-icon://decline" press="onPress"/>
+				</headerContent>
+				<content>
+				<IconTabBar
+		id="idIconTabBarNoIcons"
+		expanded="{device>/isNoPhone}"
+		class="sapUiResponsiveContentPadding">
+					
+		<items >
+			<IconTabFilter text="Incident list" key="info" >
+				<mvc:XMLView viewName="bala.comEHSM_Portal.view.inlist"/>
+			</IconTabFilter>
+			<IconTabFilter text="Risk assesment" key="attachments" >
+				<mvc:XMLView viewName="bala.comEHSM_Portal.view.risk"/>
+			</IconTabFilter>
+			<IconTabFilter text="Incident create" key="notes">
+				<mvc:XMLView viewName="bala.comEHSM_Portal.view.incr"/>
+			</IconTabFilter>
+			<IconTabFilter text="Material stock" key="people">
+				
+			</IconTabFilter>
+		</items>
+	</IconTabBar>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

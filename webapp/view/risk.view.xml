@@ -1,0 +1,113 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns="sap.m" xmlns:f="sap.ui.layout.form" controllerName="bala.comEHSM_Portal.controller.risk"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App id="app">
+		<Panel>
+			<content>
+				<l:VerticalLayout class="sapUiContentPadding" width="100%">
+					<l:dependents>
+						<core:Fragment fragmentName="bala.comEHSM_Portal.fragment.BusyDialog" type="XML"/>
+					</l:dependents>
+				</l:VerticalLayout>
+					<f:SimpleForm width="100%" id="SimpleFormChange354wide" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3"
+					labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+					columnsL="1" columnsM="1" singleContainerFullSize="false">
+					<f:content>
+						
+					<Label text="Agent"/>
+					<Input id="agent"/>
+						<Label/>
+					<Button width="12rem" text="Get details" type="Emphasized" press="onPress"></Button>
+					
+					</f:content>
+				</f:SimpleForm>
+					
+					<Table id="risk" inset="false" items="{ path: '/' }">
+						<columns>
+							<Column minScreenWidth="Tablet">
+								<Text text="Record no"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Agent type"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Description"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="severity"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Rating category"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Plan begin date"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Plan end date"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Created by"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Valid from"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Valid to"/>
+							</Column>
+							<!--<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="End">
+				<Text text="Dimensions" />
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="Center">
+				<Text text="Weight" />
+			</Column>
+			<Column
+				hAlign="End">
+				<Text text="Price" />
+			</Column>-->
+						</columns>
+						<items>
+							<ColumnListItem press="onClick">
+								<cells >
+									<Text text="{Recn}"/>
+									<Text text="{Eptype}"/>
+									<Text text="{Rem}"/>
+							
+									<Text text="{Severe}"/>
+									<Text text="{Ratingcat}"/>
+									
+									<Text text="{ path : 'Planbegdat', type : 'sap.ui.model.type.Date', formatOptions: { style : 'long' } }"/>
+									<Text text="{ path : 'Planenddat', type : 'sap.ui.model.type.Date', formatOptions: { style : 'long' } }"/>
+									<Text text="{Crnam}"/>
+									<Text text="{ path : 'Valfr', type : 'sap.ui.model.type.Date', formatOptions: { style : 'long' } }"/>
+									<Text text="{ path : 'Valto', type : 'sap.ui.model.type.Date', formatOptions: { style : 'long' } }"/>
+									<!--<Text text="{Width} x {Depth} x {Height} {DimUnit}"/>
+									<ObjectNumber
+						number="{WeightMeasure}"
+						unit="{WeightUnit}"
+						state="{
+							parts: [
+								{path: 'WeightMeasure'},
+								{path: 'WeightUnit'}
+							],
+							formatter: 'sap.m.sample.Table.Formatter.weightState'
+						}" />
+					<ObjectNumber
+							number="{
+								parts:[{path:'Price'},{path:'CurrencyCode'}],
+								type: 'sap.ui.model.type.Currency',
+								formatOptions: {showMeasure: false}
+							}"
+							unit="{CurrencyCode}" />-->
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+			</content>
+		</Panel>
+	</App>
+</mvc:View>

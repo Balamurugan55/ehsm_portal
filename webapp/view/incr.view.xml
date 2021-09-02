@@ -1,0 +1,45 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns="sap.m" xmlns:f="sap.ui.layout.form" controllerName="bala.comEHSM_Portal.controller.incr"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Panel width="100%">
+		<l:Grid defaultSpan="L12 M7 S12" width="auto">
+			<l:content>
+					<l:VerticalLayout class="sapUiContentPadding" width="100%">
+						<l:dependents>
+							<core:Fragment fragmentName="bala.comEHSM_Portal.fragment.BusyDialog" type="XML"/>
+						</l:dependents>
+					</l:VerticalLayout>
+				<f:SimpleForm width="100%" id="form" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3"
+					labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+					columnsL="1" columnsM="1" singleContainerFullSize="false">
+					<f:content>
+						
+					
+							<Label text="Incident type"/>
+							<Input id="intype" value="{/Iatype}"/>
+							<Label text="Incident description"/>
+							<Input id="indesc" value="{/Evdesc}"/>
+							<Label text="Damage type"/>
+							<Input id="dmtype" value="{/Dmtype}"/>
+							<Label text="Equipment no"/>
+							<Input id="eqno" value="{/Equnr}"/>
+							<Label text="Equipment description"/>
+							<Input id="eqdesc" value="{/Eqdesc}"/>
+							<Label text="Investigation result"/>
+							<Input id="invres" value="{/Invresult}"/>
+							<Label text="Created by"/>
+							<Input id="crby" value="{/Crnam}"/>
+							<Label text="Event date"/>
+							<DatePicker id="evdate" valueFormat="yyyy-MM-dd" placeholder="Enter date" value="{/Valfr}" class="sapUiSmallMarginBottom"/>
+							<Label text="Valid from"/>
+							<DatePicker id="valfr" valueFormat="yyyy-MM-dd" placeholder="Enter date" value="{/Valfr}" class="sapUiSmallMarginBottom"/>
+							<Label text="Valid to"/>
+							<DatePicker id="valto" valueFormat="yyyy-MM-dd" placeholder="Enter date" value="{/Valto}" class="sapUiSmallMarginBottom"/>
+						<Label/>
+					<Button width="12rem" text="Create" type="Emphasized" press="onClick"></Button>
+					
+					</f:content>
+				</f:SimpleForm>
+			</l:content>
+		</l:Grid>
+		</Panel>
+</mvc:View>

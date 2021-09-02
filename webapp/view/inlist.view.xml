@@ -1,0 +1,105 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns="sap.m" controllerName="bala.comEHSM_Portal.controller.inlist"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App id="app">
+		<Panel>
+			<content>
+				<l:VerticalLayout class="sapUiContentPadding" width="100%">
+						<l:dependents>
+							<core:Fragment fragmentName="bala.comEHSM_Portal.fragment.BusyDialog" type="XML"/>
+						</l:dependents>
+					</l:VerticalLayout>
+				<ScrollContainer
+            height="90%"
+            vertical="true"
+          >
+				<Table id="inlist" inset="false" items="{ path: '/' }" >
+					
+					<columns>
+						<Column minScreenWidth="Tablet">
+							<Text text="Record no"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Incident type"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Description"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Damage type"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Equipment no"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Description"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Investigation result"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Created by"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Valid from"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Valid to"/>
+						</Column>
+						<!--<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="End">
+				<Text text="Dimensions" />
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="Center">
+				<Text text="Weight" />
+			</Column>
+			<Column
+				hAlign="End">
+				<Text text="Price" />
+			</Column>-->
+					</columns>
+					<items>
+						<ColumnListItem type="Navigation" press="onClick">
+							<cells >
+								<Text text="{PlannedorderNum}"/>
+								<Text text="{Material}"/>
+								<Text text="{ProcurementType}"/>
+								<Text text="{OrderType}"/>
+								<Text text="{TotalPlordQty}"/>
+								<Text text="{FixedScrapQty}"/>
+								<Text text="{ReqQuan}"/>
+								<Text text="{ path : 'PlanOpenDate', type : 'sap.ui.model.type.Date', formatOptions: { style : 'long' } }"/>
+								<Text text="{ path : 'OrderStartDate', type : 'sap.ui.model.type.Date', formatOptions: { style : 'long' } }"/>
+								<Text text="{ path : 'OrderFinDate', type : 'sap.ui.model.type.Date', formatOptions: { style : 'long' } }"/>
+								<!--<Text text="{Width} x {Depth} x {Height} {DimUnit}"/>
+									<ObjectNumber
+						number="{WeightMeasure}"
+						unit="{WeightUnit}"
+						state="{
+							parts: [
+								{path: 'WeightMeasure'},
+								{path: 'WeightUnit'}
+							],
+							formatter: 'sap.m.sample.Table.Formatter.weightState'
+						}" />
+					<ObjectNumber
+							number="{
+								parts:[{path:'Price'},{path:'CurrencyCode'}],
+								type: 'sap.ui.model.type.Currency',
+								formatOptions: {showMeasure: false}
+							}"
+							unit="{CurrencyCode}" />-->
+							</cells>
+						</ColumnListItem>
+					</items>
+					
+				</Table>
+				</ScrollContainer>
+			</content>
+		</Panel>
+	</App>
+</mvc:View>

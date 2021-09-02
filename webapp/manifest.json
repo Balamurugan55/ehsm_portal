@@ -1,0 +1,127 @@
+{
+	"_version": "1.7.0",
+	"sap.app": {
+		"id": "bala.comEHSM_Portal",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"ZEHSMPORTAL_SRV": {
+				"uri": "/sap/opu/odata/sap/ZEHSMPORTAL_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": ["sap_hcb", "sap_belize"]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "bala.comEHSM_Portal.view.login",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "bala.comEHSM_Portal.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "bala.comEHSM_Portal.view",
+				"targetAggregation": "pages",
+				"controlId": "app"
+			},
+			"targets": {
+				"login": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "login",
+					"viewLevel": 1,
+					"controlAggregation": "pages",
+					"targetAggregation": "pages",
+					"controlId": "app"
+				},
+				"ehsmdashboard": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "ehsmdashboard",
+					"viewLevel": 2,
+					"targetAggregation": "pages",
+					"controlId": "app",
+					"controlAggregation": "pages"
+				}
+			},
+			"routes": [{
+				"name": "ehsmdashboard",
+				"pattern": "ehsmdashboard",
+				"titleTarget": "",
+				"greedy": false,
+				"targetAggregation": "pages",
+				"controlId": "app",
+				"target": ["ehsmdashboard"]
+			}, {
+				"name": "login",
+				"pattern": "login",
+				"titleTarget": "",
+				"greedy": false,
+				"targetAggregation": "pages",
+				"controlId": "app",
+				"target": ["login"]
+			}]
+		}
+	}
+}
